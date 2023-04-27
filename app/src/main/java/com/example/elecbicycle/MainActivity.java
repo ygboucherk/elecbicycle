@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -37,24 +38,28 @@ class PullerThread extends Thread {
 
     public PullerThread() {
         this.adapter = BluetoothAdapter.getDefaultAdapter();
-        this.discoverDevices();
-        this.connect(this.target);
+        boolean discovered = this.discoverDevices();
+        if (discovered) {
+            this.connect(this.target);
+        }
     }
 
-    public void discoverDevices() {
+    public boolean discoverDevices() {
         Set<BluetoothDevice> pairedDevices = this.adapter.getBondedDevices();
         if (pairedDevices.size() > 0) {
             for (BluetoothDevice device: pairedDevices) {
                 String _name = device.getName();
                 String _addr = device.getAddress();
-                if (_name == "STIIIII") {
+                if (Objects.equals(_name, "STIIIII")) {
                     this.target = device;
                     Log.println(1, "BT", "Found device");
+                    return true;
                 }
             }
         } else {
             Log.println(5, "BT", "No device found");
         }
+        return false;
     }
 
     public void connect(BluetoothDevice device) {
@@ -64,8 +69,11 @@ class PullerThread extends Thread {
 
         try {
             tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
+            Log.println(1, "BT", "Connected to device !");
         } catch (IOException e) {
             Log.e("ConnectError", "Error connecting BlueTooth", e);
+        } catch (NullPointerException pointerShit) {
+            Log.e("BT", "No target device to connect");
         }
 
         this.mmSocket = tmp;
@@ -128,12 +136,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        puller = new PullerThread();
+        this.puller = new PullerThread();
         this.testPuller();
     }
 
     String testPuller() {
-        puller.send(("PERCENT").getBytes(StandardCharsets.UTF_8));
+        this.puller.send(("PERCENT").getBytes(StandardCharsets.UTF_8));
         byte[] received = puller.read();
         String receivedStr = new String(received, StandardCharsets.UTF_8);
         ((TextView)findViewById(R.id.battery_percentage)).setText(receivedStr);
