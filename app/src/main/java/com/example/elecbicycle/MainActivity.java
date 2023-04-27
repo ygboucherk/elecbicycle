@@ -120,15 +120,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        ((TextView)findViewById(R.id.battery_percentage)).setText("690000%");
+        puller = new PullerThread();
+        this.testPuller();
     }
 
-    void testPuller() {
+    String testPuller() {
         puller.send(("PERCENT").getBytes(StandardCharsets.UTF_8));
         byte[] received = puller.read();
         String receivedStr = new String(received, StandardCharsets.UTF_8);
-        Toast toast = Toast.makeText(MainActivity.this, receivedStr, Toast.LENGTH_LONG);
-        toast.show();
+        ((TextView)findViewById(R.id.battery_percentage)).setText(receivedStr);
+        return receivedStr;
     }
 
 }
