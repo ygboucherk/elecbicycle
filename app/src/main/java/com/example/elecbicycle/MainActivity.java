@@ -28,14 +28,17 @@ import java.util.UUID;
 class PullerThread extends Thread {
 
     private BluetoothAdapter adapter;
-    private BluetoothSocket mmSocket;
-    private BluetoothDevice mmDevice;
+    private BluetoothSocket mmSocket = null;
+    private BluetoothDevice mmDevice = null;
+
+    private BluetoothDevice target = null;
 
     private final UUID MY_UUID = UUID.fromString("d5105e83-4ccf-4eed-a5bc-a9992004dfec");
 
     public PullerThread() {
         this.adapter = BluetoothAdapter.getDefaultAdapter();
         this.discoverDevices();
+        this.connect(target);
     }
 
     public void discoverDevices() {
@@ -44,13 +47,15 @@ class PullerThread extends Thread {
             for (BluetoothDevice device: pairedDevices) {
                 String _name = device.getName();
                 String _addr = device.getAddress();
+                if (_name == "STIIIII") {
+                    target = device;
+                }
             }
         }
     }
 
     public void connect(BluetoothDevice device) {
         BluetoothSocket tmp = null;
-        InputStream tmpIn = null;
 
         this.mmDevice = device;
 
