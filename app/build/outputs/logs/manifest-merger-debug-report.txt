@@ -131,6 +131,10 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:21:27-74
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:25:5-76
+	android:name
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:25:22-73
 uses-sdk
 INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
