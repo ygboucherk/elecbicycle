@@ -38,7 +38,7 @@ class PullerThread extends Thread {
     public PullerThread() {
         this.adapter = BluetoothAdapter.getDefaultAdapter();
         this.discoverDevices();
-        this.connect(target);
+        this.connect(this.target);
     }
 
     public void discoverDevices() {
@@ -48,9 +48,12 @@ class PullerThread extends Thread {
                 String _name = device.getName();
                 String _addr = device.getAddress();
                 if (_name == "STIIIII") {
-                    target = device;
+                    this.target = device;
+                    Log.println(1, "BT", "Found device");
                 }
             }
+        } else {
+            Log.println(5, "BT", "No device found");
         }
     }
 
