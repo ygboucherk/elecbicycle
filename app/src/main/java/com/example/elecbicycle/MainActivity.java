@@ -1,16 +1,17 @@
 package com.example.elecbicycle;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -38,10 +39,6 @@ class PullerThread extends Thread {
 
     public PullerThread() {
         this.adapter = BluetoothAdapter.getDefaultAdapter();
-        boolean discovered = this.discoverDevices();
-        if (discovered) {
-            this.connect(this.target);
-        }
     }
 
     public boolean discoverDevices() {
@@ -52,12 +49,12 @@ class PullerThread extends Thread {
                 String _addr = device.getAddress();
                 if (Objects.equals(_name, "STIIIII")) {
                     this.target = device;
-                    Log.println(1, "BT", "Found device");
+                    Log.println(Log.VERBOSE, "BT", "Found device");
                     return true;
                 }
             }
         } else {
-            Log.println(5, "BT", "No device found");
+            Log.println(Log.WARN, "BT", "No device found");
         }
         return false;
     }
@@ -69,7 +66,7 @@ class PullerThread extends Thread {
 
         try {
             tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
-            Log.println(1, "BT", "Connected to device !");
+            Log.println(Log.VERBOSE, "BT", "Connected to device !");
         } catch (IOException e) {
             Log.e("ConnectError", "Error connecting BlueTooth", e);
         } catch (NullPointerException pointerShit) {
@@ -80,37 +77,41 @@ class PullerThread extends Thread {
     }
 
     public void run() {
+        byte[] buffer = new byte[1024];
+        if (this.discoverDevices()) {
+            this.connect(this.target);
+        }
+
         this.adapter.cancelDiscovery();
         try {
             this.mmSocket.connect();
         } catch (IOException closeException) {
-            Log.e("CloseError", "Error running BlueTooth", closeException);
+            Log.e("BT", "Error running BlueTooth", closeException);
         }
+        try {
+            InputStream input = this.mmSocket.getInputStream();
+            OutputStream output = this.mmSocket.getOutputStream();
+
+            output.write("LEDON".getBytes(StandardCharsets.UTF_8));
+            output.flush();
+
+            output.write("PERCENT".getBytes(StandardCharsets.UTF_8));
+            output.flush();
+
+            Log.println(Log.VERBOSE, "BT", "Sent data");
+
+            while (true) {
+                int d = input.read(buffer);
+                Log.println(Log.VERBOSE, "BT", ("Got Data: " + d));
+            }
+        } catch (IOException e) {}
     }
 
-    public void cancel() {
+    public void close() {
         try {
             this.mmSocket.close();
         } catch (IOException e) {
             Log.e("ErrorClosing", "Error closing connection", e);
-        }
-    }
-
-    public void send(byte[] bytes) {
-        try {
-            OutputStream mmOut = this.mmSocket.getOutputStream();
-            mmOut.write(bytes);
-            mmOut.flush();
-        } catch (IOException e) {
-        }
-    }
-
-    public byte[] read() {
-        try {
-            InputStream mmIn = this.mmSocket.getInputStream();
-            return mmIn.readAllBytes();
-        } catch (IOException e) {
-            return ("Error").getBytes(StandardCharsets.UTF_8);
         }
     }
 }
@@ -136,16 +137,11 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        this.puller = new PullerThread();
-        this.testPuller();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+            this.puller = new PullerThread();
+            this.puller.start();
+        } else {
+            Log.e("BT", "No bluetooth permission");
+        }
     }
-
-    String testPuller() {
-        this.puller.send(("PERCENT").getBytes(StandardCharsets.UTF_8));
-        byte[] received = puller.read();
-        String receivedStr = new String(received, StandardCharsets.UTF_8);
-        ((TextView)findViewById(R.id.battery_percentage)).setText(receivedStr);
-        return receivedStr;
-    }
-
 }

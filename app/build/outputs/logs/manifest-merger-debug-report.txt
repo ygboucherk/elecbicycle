@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
 MERGED from [androidx.databinding:viewbinding:7.4.2] C:\Users\Yanis\.gradle\caches\transforms-3\2e5a15fdae7174e6e7d682593cbb98c6\transformed\viewbinding-7.4.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-ui:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\857b433123be7972f13edf0beba7dcb6\transformed\navigation-ui-2.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Yanis\.gradle\caches\transforms-3\6acbca7b40f0438e8e77ed68bb5757c6\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
@@ -16,25 +16,29 @@ MERGED from [androidx.navigation:navigation-runtime:2.4.1] C:\Users\Yanis\.gradl
 MERGED from [androidx.activity:activity-ktx:1.2.3] C:\Users\Yanis\.gradle\caches\transforms-3\956d30d49203979bc178f8df18d84191\transformed\activity-ktx-1.2.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\0a9d647d43f291866b5ebb5fb156cce4\transformed\navigation-common-2.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\12d7d79122871c735cc8ace2dd4f90cd\transformed\lifecycle-viewmodel-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\4673197e3c71446a68c48cbd544a1058\transformed\gridlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\066f493cb7d990cafa5df1ece5ebc364\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\abd4ddf72d39a1254cd01b6ca1672452\transformed\fragment-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\Yanis\.gradle\caches\transforms-3\36b2b5ecb4519cb75031f71771ad9c1f\transformed\activity-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\ee6bca0bfd771ca383779e9cbb29c5d6\transformed\appcompat-resources-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\e26f1a15e2cabf4e4cf3c3b068fd7f2f\transformed\emoji2-views-helper-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\98f686da2fce73ff8e48ca6a893a34a2\transformed\emoji2-1.0.0\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Yanis\.gradle\caches\transforms-3\7bc7a5b48c08c285c7816e5896abfab2\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\8255cf8f73e0ec2d884b3aa8102e6cd4\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\c49cd9f9e70a62c0cfb6a9c057db283b\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\5d6dbb7a2526cb46a310f1fa772a8328\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\c17573ade799759c56baf884a28f8de6\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Yanis\.gradle\caches\transforms-3\aea016e58638633e6e91f6f930a69e1e\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\4432a2afdd19fc85814143f134bfa94c\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\bf2a6d46c92d2b1b015ce44f75d834ab\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.2.0] C:\Users\Yanis\.gradle\caches\transforms-3\be3136d9b215e05913fa30ada15f681a\transformed\core-ktx-1.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\936a6cf0b800d678beef4a0e564f2e50\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\8f9220d66762372c6aa1e02e07b4f277\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.7.0] C:\Users\Yanis\.gradle\caches\transforms-3\0212d0c0c0b99c5d00c15a82a811f4d1\transformed\core-1.7.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\2365384ad980976d11b4bd9d48d00571\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -58,22 +62,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Yanis\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\4a128805ae54552b7183634231e39ff5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\ae4109ec1e873f2074e4c3a60211a759\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\73f130ba62a38ea2b5c3476f7af43454\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-27:12
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:2:11-69
@@ -81,8 +85,12 @@ uses-permission#android.permission.BLUETOOTH_CONNECT
 ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:5:5-76
 	android:name
 		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:5:22-73
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:6:5-73
+	android:name
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:6:22-70
 application
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:7:5-26:19
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:8:5-27:19
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Yanis\.gradle\caches\transforms-3\6acbca7b40f0438e8e77ed68bb5757c6\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Yanis\.gradle\caches\transforms-3\6acbca7b40f0438e8e77ed68bb5757c6\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Yanis\.gradle\caches\transforms-3\0ff7d7f73dffa7d84bec5f5c083e5d80\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -102,39 +110,39 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\Yanis\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\Yanis\.gradle\caches\transforms-3\0212d0c0c0b99c5d00c15a82a811f4d1\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:11:9-54
 	tools:targetApi
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:15:9-29
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:14:9-49
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:15:9-49
 	android:dataExtractionRules
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:9:9-65
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:10:9-65
 activity#com.example.elecbicycle.MainActivity
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:16:9-25:20
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:17:9-26:20
 	android:label
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:19:13-45
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:20:13-45
 	android:exported
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml:24:27-74
 uses-sdk
 INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Yanis\AndroidStudioProjects\elecbicycle\app\src\main\AndroidManifest.xml
@@ -163,6 +171,8 @@ MERGED from [androidx.navigation:navigation-common:2.4.1] C:\Users\Yanis\.gradle
 MERGED from [androidx.navigation:navigation-common:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\0a9d647d43f291866b5ebb5fb156cce4\transformed\navigation-common-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\12d7d79122871c735cc8ace2dd4f90cd\transformed\lifecycle-viewmodel-ktx-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\12d7d79122871c735cc8ace2dd4f90cd\transformed\lifecycle-viewmodel-ktx-2.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\4673197e3c71446a68c48cbd544a1058\transformed\gridlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\4673197e3c71446a68c48cbd544a1058\transformed\gridlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\066f493cb7d990cafa5df1ece5ebc364\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\066f493cb7d990cafa5df1ece5ebc364\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\abd4ddf72d39a1254cd01b6ca1672452\transformed\fragment-1.4.1\AndroidManifest.xml:20:5-22:41
@@ -175,6 +185,8 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Yanis\.gradle\c
 MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\e26f1a15e2cabf4e4cf3c3b068fd7f2f\transformed\emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\98f686da2fce73ff8e48ca6a893a34a2\transformed\emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\98f686da2fce73ff8e48ca6a893a34a2\transformed\emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Yanis\.gradle\caches\transforms-3\7bc7a5b48c08c285c7816e5896abfab2\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Yanis\.gradle\caches\transforms-3\7bc7a5b48c08c285c7816e5896abfab2\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\8255cf8f73e0ec2d884b3aa8102e6cd4\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -187,10 +199,10 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Yanis\.gradl
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\c17573ade799759c56baf884a28f8de6\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Yanis\.gradle\caches\transforms-3\aea016e58638633e6e91f6f930a69e1e\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Yanis\.gradle\caches\transforms-3\aea016e58638633e6e91f6f930a69e1e\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\722cfa06d51a32340f337ac9798393bf\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\4432a2afdd19fc85814143f134bfa94c\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Yanis\.gradle\caches\transforms-3\4432a2afdd19fc85814143f134bfa94c\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\bf2a6d46c92d2b1b015ce44f75d834ab\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
@@ -201,6 +213,10 @@ MERGED from [androidx.transition:transition:1.4.1] C:\Users\Yanis\.gradle\caches
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\Yanis\.gradle\caches\transforms-3\936a6cf0b800d678beef4a0e564f2e50\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\8f9220d66762372c6aa1e02e07b4f277\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\8f9220d66762372c6aa1e02e07b4f277\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Yanis\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.7.0] C:\Users\Yanis\.gradle\caches\transforms-3\0212d0c0c0b99c5d00c15a82a811f4d1\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
