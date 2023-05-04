@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,16 +41,19 @@ class PullerThread extends Thread {
 
     private final UUID MY_UUID = UUID.fromString("d5105e83-4ccf-4eed-a5bc-a9992004dfec");
 
-    public PullerThread(BluetoothManager mgr) {
-        this.adapter = mgr.getAdapter();
-        if (!adapter.isEnabled()) {
-            Log.println(Log.VERBOSE, "BT", "Adapter disabled, enabling...");
-            adapter.enable();
-        }
-        this.discoverDevices();
+    public PullerThread(BluetoothDevice device) {
+        //this.adapter = mgr.getAdapter();
+        //if (!adapter.isEnabled()) {
+        //    Log.println(Log.VERBOSE, "BT", "Adapter disabled, enabling...");
+        //    adapter.enable();
+        //}
+        this.target = device;
+        this.connect(this.target);
     }
 
     public boolean discoverDevices() {
+
+
         Set<BluetoothDevice> pairedDevices = this.adapter.getBondedDevices();
         if (pairedDevices.size() > 0) {
             for (BluetoothDevice device: pairedDevices) {
@@ -75,8 +79,8 @@ class PullerThread extends Thread {
         this.mmDevice = device;
 
         try {
-//            tmp = mmDevice.createInsecureRfcommSocketToServiceRecord(MY_UUID);
-            tmp = (BluetoothSocket) (mmDevice.getClass().getMethod("createRfcommSocket", new Class[] { int.class } ).invoke(device, 1));
+            tmp = mmDevice.createInsecureRfcommSocketToServiceRecord(MY_UUID);
+//            tmp = (BluetoothSocket) (mmDevice.getClass().getMethod("createRfcommSocket", new Class[] { int.class } ).invoke(device, 1));
             Log.println(Log.VERBOSE, "BT", "Connected to device !");
         } catch (Exception pointerShit) {
             Log.e("BT", "No target device to connect");
@@ -101,7 +105,6 @@ class PullerThread extends Thread {
     }
     public void run() {
         byte[] buffer = new byte[1024];
-        this.adapter.cancelDiscovery();
         this.tryToConnect();
         try {
             InputStream input = this.mmSocket.getInputStream();
@@ -110,10 +113,10 @@ class PullerThread extends Thread {
             Log.println(Log.VERBOSE, "BT", "Loaded socket");
 
             while (true) {
-                if (input.available() != 0) {
+                    Log.println(Log.VERBOSE, "BT", "Attempting to read data");
                     int d = input.read(buffer);
                     Log.println(Log.VERBOSE, "BT", ("Got Data: " + d));
-                }
+                    Log.println(Log.VERBOSE, "BTBuffer", new String(buffer, StandardCharsets.UTF_8));
             }
         } catch (Exception e) {
             Log.e("BT", "Error running BT", e);
@@ -135,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
 
      void loadBluetooth() {
-        puller = new PullerThread(getApplicationContext().getSystemService(BluetoothManager.class));
+        puller = new PullerThread(getIntent().getExtras().getParcelable("btdevice"));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
