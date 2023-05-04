@@ -42,6 +42,11 @@ class PullerThread extends Thread {
 
     public PullerThread(BluetoothManager mgr) {
         this.adapter = mgr.getAdapter();
+        if (!adapter.isEnabled()) {
+            Log.println(Log.VERBOSE, "BT", "Adapter disabled, enabling...");
+            adapter.enable();
+        }
+        this.discoverDevices();
     }
 
     public boolean discoverDevices() {
@@ -50,8 +55,10 @@ class PullerThread extends Thread {
             for (BluetoothDevice device: pairedDevices) {
                 String _name = device.getName();
                 String _addr = device.getAddress();
+                Log.println(Log.VERBOSE, "BT", _name);
                 if (Objects.equals(_name, "STIIIII")) {
                     this.target = device;
+                    this.connect(this.target);
                     Log.println(Log.VERBOSE, "BT", "Found device");
                     return true;
                 }
@@ -68,46 +75,49 @@ class PullerThread extends Thread {
         this.mmDevice = device;
 
         try {
-            tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
+//            tmp = mmDevice.createInsecureRfcommSocketToServiceRecord(MY_UUID);
+            tmp = (BluetoothSocket) (mmDevice.getClass().getMethod("createRfcommSocket", new Class[] { int.class } ).invoke(device, 1));
             Log.println(Log.VERBOSE, "BT", "Connected to device !");
-        } catch (IOException e) {
-            Log.e("ConnectError", "Error connecting BlueTooth", e);
-        } catch (NullPointerException pointerShit) {
+        } catch (Exception pointerShit) {
             Log.e("BT", "No target device to connect");
         }
 
         this.mmSocket = tmp;
     }
 
+
+    private boolean tryToConnect() {
+        while (true) {
+            try {
+                this.mmSocket.connect();
+                return true;
+            } catch (Exception e) {
+                Log.e("BT", "Error running BlueTooth", e);
+                try {
+                    sleep(690);
+                } catch (Exception _e) {}
+            }
+        }
+    }
     public void run() {
         byte[] buffer = new byte[1024];
-        if (this.discoverDevices()) {
-            this.connect(this.target);
-        }
-
         this.adapter.cancelDiscovery();
-        try {
-            this.mmSocket.connect();
-        } catch (IOException closeException) {
-            Log.e("BT", "Error running BlueTooth", closeException);
-        }
+        this.tryToConnect();
         try {
             InputStream input = this.mmSocket.getInputStream();
             OutputStream output = this.mmSocket.getOutputStream();
 
-            output.write("LEDON".getBytes(StandardCharsets.UTF_8));
-            output.flush();
-
-            output.write("PERCENT".getBytes(StandardCharsets.UTF_8));
-            output.flush();
-
-            Log.println(Log.VERBOSE, "BT", "Sent data");
+            Log.println(Log.VERBOSE, "BT", "Loaded socket");
 
             while (true) {
-                int d = input.read(buffer);
-                Log.println(Log.VERBOSE, "BT", ("Got Data: " + d));
+                if (input.available() != 0) {
+                    int d = input.read(buffer);
+                    Log.println(Log.VERBOSE, "BT", ("Got Data: " + d));
+                }
             }
-        } catch (IOException e) {}
+        } catch (Exception e) {
+            Log.e("BT", "Error running BT", e);
+        }
     }
 
     public void close() {
@@ -125,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
 
      void loadBluetooth() {
-        manager = new PullerThread(getApplicationContext().getSystemService(BluetoothManager.class));
+        puller = new PullerThread(getApplicationContext().getSystemService(BluetoothManager.class));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
