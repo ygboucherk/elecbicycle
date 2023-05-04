@@ -1,9 +1,12 @@
 package com.example.elecbicycle;
 
+
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,8 +40,8 @@ class PullerThread extends Thread {
 
     private final UUID MY_UUID = UUID.fromString("d5105e83-4ccf-4eed-a5bc-a9992004dfec");
 
-    public PullerThread() {
-        this.adapter = BluetoothAdapter.getDefaultAdapter();
+    public PullerThread(BluetoothManager mgr) {
+        this.adapter = mgr.getAdapter();
     }
 
     public boolean discoverDevices() {
@@ -117,10 +120,13 @@ class PullerThread extends Thread {
 }
 
 public class MainActivity extends AppCompatActivity {
-
     private ActivityMainBinding binding;
     private PullerThread puller;
 
+
+     void loadBluetooth() {
+        manager = new PullerThread(getApplicationContext().getSystemService(BluetoothManager.class));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
-            this.puller = new PullerThread();
+            loadBluetooth();
             this.puller.start();
         } else {
             Log.e("BT", "No bluetooth permission");
