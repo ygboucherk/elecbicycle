@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -140,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
      void loadBluetooth() {
         puller = new PullerThread(getIntent().getExtras().getParcelable("btdevice"));
     }
+
+    void showPct(int pourcent) {
+        ((TextView)findViewById(R.id.txt_pourcentage)).setText("Pourcentage : " + toString(pourcent) + "%");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,11 +161,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
-            loadBluetooth();
-            this.puller.start();
-        } else {
-            Log.e("BT", "No bluetooth permission");
+        try {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+                loadBluetooth();
+                this.puller.start();
+            } else {
+                Log.e("BT", "No bluetooth permission");
+            }
+        } catch (Exception e) {
+
         }
+        showPct(69);
     }
 }
